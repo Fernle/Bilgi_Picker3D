@@ -1,4 +1,4 @@
-public enum UIPanelTypes 
+public enum UIPanelTypes
 {
     Start,
     Level,

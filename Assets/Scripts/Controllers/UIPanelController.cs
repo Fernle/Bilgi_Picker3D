@@ -1,12 +1,11 @@
-using System;
 using UnityEngine;
 using System.Collections.Generic;
-using System.Security.Cryptography;
 using Sirenix.OdinInspector;
 
 public class UIPanelController : MonoBehaviour
 {
-    #region Self Varibles
+
+    #region Self Variables
 
     #region Serialized Variables
 
@@ -16,6 +15,7 @@ public class UIPanelController : MonoBehaviour
 
     #endregion
 
+
     private void OnEnable()
     {
         SubscribeEvents();
@@ -23,28 +23,27 @@ public class UIPanelController : MonoBehaviour
 
     private void SubscribeEvents()
     {
-        
+
     }
 
-    private void UnSubscribeEvents()
+    private void UnsubscribeEvents()
     {
-        
+
     }
 
     private void OnDisable()
     {
-        UnSubscribeEvents();
+        UnsubscribeEvents();
     }
-    
-    [Button("OnOpenPanel")]
 
+    [Button("OnOpenPanel")]
     private void OnOpenPanel(UIPanelTypes type, int layerValue)
     {
-        Instantiate(Resources.Load<GameObject>($"Screen/{type}Panel"), layers[layerValue]);
+        OnClosePanel(layerValue);
+        Instantiate(Resources.Load<GameObject>($"Screens/{type}Panel"), layers[layerValue]);
     }
-    
+
     [Button("OnClosePanel")]
-    
     private void OnClosePanel(int layerValue)
     {
         if (layers[layerValue].childCount > 0)
@@ -63,4 +62,5 @@ public class UIPanelController : MonoBehaviour
             }
         }
     }
+
 }
