@@ -5,14 +5,12 @@ namespace Commands
 {
     public class OnLevelDestroyerCommand : ICommand
     {
-        private Transform _levelHolder;
-
+        private readonly Transform _levelHolder;
 
         public OnLevelDestroyerCommand(Transform levelHolder)
         {
             _levelHolder = levelHolder;
         }
-
 
         public void Execute()
         {
