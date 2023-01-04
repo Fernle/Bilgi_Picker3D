@@ -5,8 +5,9 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Sirenix.OdinInspector;
+using Extensions;
 
-public class LevelPanelController : MonoBehaviour
+public class LevelPanelController : MonoSingleton<LevelPanelController>
 {
     #region Self Variables
 
@@ -15,6 +16,12 @@ public class LevelPanelController : MonoBehaviour
     [SerializeField] private List<TextMeshProUGUI> levelTexts = new List<TextMeshProUGUI>();
     [Space]
     [SerializeField] private List<Image> stageImages = new List<Image>();
+
+    #endregion
+
+    #region Public Variables
+
+    public TextMeshProUGUI SpeedText;
 
     #endregion
 
