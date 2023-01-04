@@ -36,14 +36,17 @@ MonoBehaviour:
     - sc.stylizedwater2.runtime
     - Boxophobic.Utils.Scripts
     - sc.stylizedwater2.editor
+    - Sirenix.OdinInspector.CompatibilityLayer
     - RuntimeTestAssembly
     - NonConvexCollider
     - Boxophobic.PolyverseSkies.Scripts
     - NonConvexColliderRuntimeAPI
+    - Sirenix.OdinInspector.CompatibilityLayer.Editor
     - Boxophobic.Utils.Editor
     - NonConvexEditor
     - Boxophobic.PolyverseSkies.Editor
     - Sirenix.OdinInspector.Modules.UnityMathematics
+    - PPv2URPConverters
     showAdvancedSettings: 0
   addMgrToSceneAutomatically: 0
   autoUpdateReferences: 1

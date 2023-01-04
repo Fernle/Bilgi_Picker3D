@@ -3,9 +3,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
-#if URP
 using UnityEngine.Rendering.Universal;
-#endif
 
 namespace StylizedWater2
 {

@@ -6,13 +6,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
-#if URP
 using UnityEngine.Rendering.Universal;
-
-#if UNITY_2021_2_OR_NEWER
 using ForwardRendererData = UnityEngine.Rendering.Universal.UniversalRendererData;
-#endif
-#endif
 
 #if UNITY_EDITOR
 using UnityEditor;

@@ -7,6 +7,8 @@ TagManager:
   - StageArea
   - PoolArea
   - Collectable
+  - Missile
+  - MiniGame
   layers:
   - Default
   - TransparentFX
