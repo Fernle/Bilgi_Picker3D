@@ -54,7 +54,51 @@ namespace Controllers.Player
             if (other.CompareTag("MiniGame"))
             {
                 //Write Mini Game Conditions
+                StartCoroutine(MiniGameEnd());
             }
+        }
+
+        IEnumerator MiniGameEnd()
+        {
+            //calculated by maks value as 30 and final tour takes 10 sec.
+            float value = PlayerPrefs.GetInt("speedValue", 0);
+
+            yield return new WaitForSecondsRealtime(value/3f);
+
+            InputSignals.Instance.onDisableInput?.Invoke();
+            CoreGameSignals.Instance.onFinishAreaEntered?.Invoke();
+
+            Debug.Log(gameObject.transform.position.z);
+
+            float valueZ = gameObject.transform.position.z;
+
+            if (valueZ >= 355 && valueZ <= 364)
+                PlayerPrefs.SetInt("rewardImage", 0);
+            else if (valueZ >= 365 && valueZ <= 374)
+                PlayerPrefs.SetInt("rewardImage", 1);
+            else if (valueZ >= 375 && valueZ <= 384)
+                PlayerPrefs.SetInt("rewardImage", 2);
+            else if (valueZ >= 385 && valueZ <= 394)
+                PlayerPrefs.SetInt("rewardImage", 3);
+            else if (valueZ >= 395 && valueZ <= 404)
+                PlayerPrefs.SetInt("rewardImage", 4);
+            else if (valueZ >= 405 && valueZ <= 414)
+                PlayerPrefs.SetInt("rewardImage", 5);
+            else if (valueZ >= 415 && valueZ <= 424)
+                PlayerPrefs.SetInt("rewardImage", 6);
+            else if (valueZ >= 425 && valueZ <= 434)
+                PlayerPrefs.SetInt("rewardImage", 7);
+            else if (valueZ >= 435 && valueZ <= 444)
+                PlayerPrefs.SetInt("rewardImage", 8);
+            else if (valueZ >= 445 && valueZ <= 454)
+                PlayerPrefs.SetInt("rewardImage", 9);
+            else if(valueZ < 355)
+                PlayerPrefs.SetInt("rewardImage", 10);
+
+            yield return new WaitForSecondsRealtime(3f);
+            
+            CoreGameSignals.Instance.onLevelSuccessful?.Invoke();
+            UIEventSubscriber.Instance.RewardImage.sprite = UIEventSubscriber.Instance.RewardSprites[PlayerPrefs.GetInt("rewardImage", 0)];
         }
 
         private void OnDrawGizmos()

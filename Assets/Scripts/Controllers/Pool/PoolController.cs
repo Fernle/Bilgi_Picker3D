@@ -63,8 +63,6 @@ namespace Controllers.Pool
         {
             if (stageValue == stageID)
             {
-                //collectedCount = collectedCount + (_collectedCount - _data.RequiredObjectCount);
-                //collectedCount = collectedCount + (_collectedCount - _data.RequiredObjectCount);
                 PlayerPrefs.SetInt("speedValue", PlayerPrefs.GetInt("speedValue", 0) + (_collectedCount - _data.RequiredObjectCount));
                 LevelPanelController.Instance.SpeedText.text = $"x{PlayerPrefs.GetInt("speedValue", 0)}";
             }

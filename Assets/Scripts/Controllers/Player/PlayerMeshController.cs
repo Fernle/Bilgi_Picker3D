@@ -48,8 +48,6 @@ namespace Controllers.Player
         internal void PlayConfetiParticle()
         {
             confettiParticle.Play();
-            //confettiParticle.SetActive(true);
-            //DOVirtual.DelayedCall(2, () => confettiParticle.SetActive(false));
         }
         internal void OnReset()
         {

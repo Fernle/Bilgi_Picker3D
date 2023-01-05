@@ -1,10 +1,11 @@
 using Enums;
+using Extensions;
 using Managers;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIEventSubscriber : MonoBehaviour
+public class UIEventSubscriber : MonoSingleton<UIEventSubscriber>
 {
     #region Self Variables
 
@@ -18,6 +19,13 @@ public class UIEventSubscriber : MonoBehaviour
     #region Private Variables
 
     [ShowInInspector] private UIManager _manager;
+
+    #endregion
+
+    #region Public Variables
+
+    public Image RewardImage;
+    public Sprite[] RewardSprites;
 
     #endregion
 
