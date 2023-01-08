@@ -60,7 +60,7 @@ namespace Controllers.Player
 
         IEnumerator MiniGameEnd()
         {
-            //calculated by maks value as 30 and final tour takes 10 sec.
+            //calculated by max value as 30 and final tour takes 10 sec.
             float value = PlayerPrefs.GetInt("speedValue", 0);
 
             yield return new WaitForSecondsRealtime(value/3f);
@@ -68,7 +68,6 @@ namespace Controllers.Player
             InputSignals.Instance.onDisableInput?.Invoke();
             CoreGameSignals.Instance.onFinishAreaEntered?.Invoke();
 
-            Debug.Log(gameObject.transform.position.z);
 
             float valueZ = gameObject.transform.position.z;
 
